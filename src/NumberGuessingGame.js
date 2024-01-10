@@ -4,8 +4,8 @@ import GuessMessage from "./GuessMessage";
 import GameOver from "./GameOver";
 
 function NumberGuessingGame() {
-  const [numberToGuess, setnumberToGuess] = React.useState("");
-  const [numberOfGuesses, setnumberOfGuesses] = React.useState("");
+  const [numberToGuess, setnumberToGuess] = React.useState(getRandomNumber());
+  const [numberOfGuesses, setnumberOfGuesses] = React.useState(0);
   const [latestGuess, setlatestGuess] = React.useState("");
 
   function handleGuess(guess) {

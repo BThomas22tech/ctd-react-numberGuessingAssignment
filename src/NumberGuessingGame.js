@@ -10,8 +10,7 @@ function NumberGuessingGame() {
 
   function handleGuess(guess) {
     setlatestGuess(guess);
-    setnumberOfGuesses(parseInt(numberOfGuesses)+1);
-    
+    setnumberOfGuesses(parseInt(numberOfGuesses) + 1);
   }
   function handleReset() {
     const resetAll = {
@@ -55,7 +54,5 @@ function getRandomNumber() {
 }
 
 const MAX_ATTEMPTS = 5;
-
-
 
 export default NumberGuessingGame;

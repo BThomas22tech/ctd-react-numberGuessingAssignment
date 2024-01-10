@@ -8,9 +8,10 @@ function NumberGuessingGame() {
   const [numberOfGuesses, setnumberOfGuesses] = React.useState("");
   const [latestGuess, setlatestGuess] = React.useState("");
 
-  function handleGuess() {
-    setlatestGuess(parseInt(latestGuess));
-    setnumberOfGuesses(numberOfGuesses +1);
+  function handleGuess(guess) {
+    setlatestGuess(guess);
+    setnumberOfGuesses(parseInt(numberOfGuesses)+1);
+    
   }
   function handleReset() {
     const resetAll = {

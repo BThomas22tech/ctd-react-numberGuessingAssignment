@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import GuessControl from "./GuessControl";
 import GuessMessage from "./GuessMessage";
 import GameOver from "./GameOver";
@@ -8,7 +8,7 @@ function NumberGuessingGame() {
   const [numberOfGuesses, setnumberOfGuesses] = React.useState("");
   const [latestGuess, setlatestGuess] = React.useState("");
 
-  function handleGuess(event) {
+  function handleGuess() {
     setlatestGuess(parseInt(latestGuess));
     setnumberOfGuesses(numberOfGuesses +1);
   }
@@ -18,9 +18,9 @@ function NumberGuessingGame() {
       numberOfGuesses: 0,
       latestGuess: null,
     };
-    setnumberToGuess(resetAll);
-    setnumberOfGuesses(resetAll);
-    setlatestGuess(resetAll);
+    setnumberToGuess(resetAll.numberToGuess);
+    setnumberOfGuesses(resetAll.numberOfGuesses);
+    setlatestGuess(resetAll.latestGuess);
   }
   const isCorrectGuess = latestGuess === numberToGuess;
 

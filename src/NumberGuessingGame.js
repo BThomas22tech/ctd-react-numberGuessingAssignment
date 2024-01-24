@@ -13,14 +13,9 @@ function NumberGuessingGame() {
     setnumberOfGuesses(parseInt(numberOfGuesses) + 1);
   }
   function handleReset() {
-    const resetAll = {
-      numberToGuess: getRandomNumber(),
-      numberOfGuesses: 0,
-      latestGuess: null,
-    };
-    setnumberToGuess(resetAll.numberToGuess);
-    setnumberOfGuesses(resetAll.numberOfGuesses);
-    setlatestGuess(resetAll.latestGuess);
+      setnumberToGuess( getRandomNumber()),
+      setnumberOfGuesses(0),
+      setlatestGuess(null)
   }
   const isCorrectGuess = latestGuess === numberToGuess;
 

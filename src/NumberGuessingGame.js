@@ -19,8 +19,8 @@ function NumberGuessingGame() {
     setnumberOfGuesses(parseInt(numberOfGuesses) + 1);
   }
   function handleReset() {
-    setnumberToGuess(getRandomNumber()),
-      setnumberOfGuesses(0),
+    setnumberToGuess(getRandomNumber());
+      setnumberOfGuesses(0);
       setlatestGuess(null);
   }
   const isCorrectGuess = latestGuess === numberToGuess;

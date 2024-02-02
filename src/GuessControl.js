@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import Button from "./Button";
 
 function GuessControl(prop) {
@@ -20,5 +20,6 @@ function GuessControl(prop) {
     </div>
   );
 }
+
 
 export default GuessControl;

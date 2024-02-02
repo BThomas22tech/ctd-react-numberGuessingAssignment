@@ -1,26 +1,27 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import GuessControl from "./GuessControl";
 import GuessMessage from "./GuessMessage";
 import GameOver from "./GameOver";
 
 function NumberGuessingGame() {
-  const [numberToGuess, setnumberToGuess] = React.useState("");
-  const [numberOfGuesses, setnumberOfGuesses] = React.useState("");
+  function getRandomNumber() {
+    return Math.floor(Math.random() * 100) + 1;
+  }
+
+  const MAX_ATTEMPTS = 5;
+
+  const [numberToGuess, setnumberToGuess] = React.useState(getRandomNumber());
+  const [numberOfGuesses, setnumberOfGuesses] = React.useState(0);
   const [latestGuess, setlatestGuess] = React.useState("");
 
-  function handleGuess(event) {
-    setlatestGuess(parseInt(latestGuess));
-    setnumberOfGuesses(numberOfGuesses +1);
+  function handleGuess(guess) {
+    setlatestGuess(guess);
+    setnumberOfGuesses(parseInt(numberOfGuesses) + 1);
   }
   function handleReset() {
-    const resetAll = {
-      numberToGuess: getRandomNumber(),
-      numberOfGuesses: 0,
-      latestGuess: null,
-    };
-    setnumberToGuess(resetAll);
-    setnumberOfGuesses(resetAll);
-    setlatestGuess(resetAll);
+    setnumberToGuess(getRandomNumber());
+      setnumberOfGuesses(0);
+      setlatestGuess(null);
   }
   const isCorrectGuess = latestGuess === numberToGuess;
 
@@ -49,12 +50,5 @@ function NumberGuessingGame() {
  *
  * Returns a random integer number from 1-100 inclusive
  */
-function getRandomNumber() {
-  return Math.floor(Math.random() * 100) + 1;
-}
-
-const MAX_ATTEMPTS = 5;
-
-
 
 export default NumberGuessingGame;
